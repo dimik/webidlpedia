@@ -19,7 +19,7 @@ function listChildren(parentName, interfaces) {
     return Object.keys(interfaces).filter(n => interfaces[n].inheritance === parentName).map(n => {return {name: n, parent, parentName, children: listChildren(n, interfaces)};});
 }
 
-d3.json("https://dimik.github.io/webidlpedia/crawl.json", function(json) {
+d3.json("https://w3c.github.io/webref/ed/dom.json", function(json) {
     var links = [];
     var nodes = [];
     var interfaces = json.results.filter(s=> s.idl && s.idl.idlNames)
